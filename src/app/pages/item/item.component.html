@@ -1,0 +1,16 @@
+
+<app-loader *ngIf="state == 'loading'"></app-loader>
+
+<div class="card-container d-flex flex-row justify-content-center">
+  <app-item-card [item]="item" class="w-100 m-2"></app-item-card>
+</div>
+
+<div class="d-block message-card" *ngIf="state === 'error'">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Something went wrong.</h3>
+      <p class="card-text">We can't find what you were looking for. Best just donwload the app!</p>
+      <app-download-cta></app-download-cta>
+    </div>
+  </div>
+</div>

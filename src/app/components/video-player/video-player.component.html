@@ -1,0 +1,10 @@
+<div class="video-container">
+  <video preload="metadata" #video width="100%" [poster]="resource.imgBase | image : 'lg'" width="100%" tappable (click)="togglePlay()"></video>
+  <div class="big-button" [ngClass]="{ fade: state === 'playing' }">
+    <div *ngIf="state === 'not-started' || state === 'paused' || state === 'ended'" class="player-icon" [inlineSVG]="'player/play-button.svg'"></div>
+    <div *ngIf="state === 'playing'" class="player-icon" [inlineSVG]="'player/pause.svg'"></div>
+    <!-- <ion-spinner *ngIf="state === 'buffering'"></ion-spinner> -->
+  </div>
+</div>
+
+<!-- <p class="time">{{current | time}} / {{duration | time}}</p> -->

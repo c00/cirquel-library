@@ -1,0 +1,25 @@
+<div class="card border-silks" *ngIf="item">
+
+  <img *ngIf="item.resource.type === 'photo'" class="card-img-top" [src]="item.resource.imgBase | image" alt="Trick image">
+  <app-video-player *ngIf="item.resource.type === 'video'" [resource]="item.resource"></app-video-player>
+
+  <div class="card-body border-silks">
+    <a [routerLink]="['/@', item.author.stub]" class="author-avatar" [appBgImage]="item.author.imgBase | image : 'sm'"></a>
+    <h3>{{ item.resource.type }} by: <a [routerLink]="['/@', item.author.stub]">{{ item.author.userName }}</a> <span *ngIf="item.venue">@ {{item.venue.name}}</span></h3>
+    <h1 class="card-title">{{ item.itemName.displayName }}</h1>
+
+    <p class="card-text">{{item.description}}</p>
+
+    <p>
+      <span class="badge badge-primary">Skill <span class="badge badge-light">{{ item.skillLevel }} / 5</span></span>
+      <span class="badge badge-secondary">Strength <span class="badge badge-light">{{ item.strengthLevel }} / 5</span></span>
+      <span class="badge badge-info">Flexibility <span class="badge badge-light">{{ item.flexiLevel }} / 5</span></span>
+    </p>
+
+    <div *ngIf="showCta">
+      <hr>
+      <h4 class="text-center">Want to search the whole library? Download the app!</h4>
+      <app-download-cta></app-download-cta>
+    </div>
+  </div>
+</div>

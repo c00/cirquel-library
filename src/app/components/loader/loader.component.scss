@@ -1,0 +1,39 @@
+app-loader {
+  display: block;
+  max-width: 300px;
+  text-align: center;
+  margin: 20px auto;
+
+  .image {
+    margin: 8px;
+    opacity: .7;
+  }
+  
+  .grey {
+    svg {
+      .fill {
+        fill: #999;
+      }
+    }
+  }
+  
+  .animate {
+    &.rolling {
+      animation: rotating 1.5s infinite
+    }
+    
+    &.flip {
+      animation: flipping 3s infinite
+    }
+    
+  }
+  
+  @keyframes flipping {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(360deg);
+    }
+  }
+}

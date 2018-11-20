@@ -1,0 +1,22 @@
+.download-buttons {
+  text-align: center;
+}
+.download-button {
+  + .download-button {
+    margin-left: 12px;
+  }
+  img {
+    width: 150px;
+  }
+}
+
+.vertical {
+  .download-button {
+    display: block;
+    margin-bottom: 12px;
+
+    + .download-button {
+      margin-left: 0;
+    }
+  }
+}

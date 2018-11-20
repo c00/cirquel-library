@@ -1,0 +1,4 @@
+<div class="card-container row" *ngIf="items">
+  <app-item-card [showCta]="false" *ngFor="let i of items" [item]="i" class="col-md-6 col-lg-4 p-2"></app-item-card>
+</div>
+

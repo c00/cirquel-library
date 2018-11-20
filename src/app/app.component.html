@@ -1,0 +1,55 @@
+<app-background></app-background>
+<header class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <a class="navbar-brand" href="https://cirquelapp.com"> <img src="assets/svg/silk-logo.svg" class="logo mr-2"> Cirquel Library</a>
+    <div class="collapse navbar-collapse" [collapse]="collapsed">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-primary" href="javascript:void(0)" (click)="openModal(template)">Download App</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="container mt-2 position-relative">
+  <router-outlet></router-outlet>
+</main>
+
+<ng-template #template>
+  <div class="modal-body">
+    <div class="text-center">
+      <img class="modal-logo" src="assets/svg/silk-logo.svg">
+    </div>
+
+    <p>
+      <app-download-cta></app-download-cta>
+    </p>
+
+    <h5>
+      The Crowdsourced Circus Library for Aerial Silks, Hoops, Trapeze, Pole and Acro Balance! Come into the <strong>Cirquel</strong>!
+    </h5>
+
+    <p>
+      <strong>Cirquel</strong> is a free, crowdsourced and open source circus library that aims to create a common dictionary for all
+      things acrobatics. Whatever your cirque preferences are, Aerial Silks, Aerial Hoops / Lyra, Trapeze, Pole Dancing
+      and Acro Balance, we got you covered.
+    </p>
+    <p>
+      Cirquel contains images and videos, along with crowdsourced information about skill requirements, strength
+      requirements etc.
+    </p>
+    <p>
+      Find tricks you love, learn them, add your own version of them, come into the Cirquel!
+    </p>
+
+    <hr>
+    <p>
+      Cirquel is open-source. If you wish to contribute, we can use everything from translators, to designers to
+      developers, and of course content creators! Check out the website or the github repo for more information on
+      contributing. (Link will follow shortly...)
+    </p>
+  </div>
+</ng-template>

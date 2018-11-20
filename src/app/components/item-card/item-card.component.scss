@@ -1,0 +1,42 @@
+@import "src/styles/colors";
+
+.card {
+  max-width: 500px;
+  margin: auto;
+  height: 100%;
+}
+.card-body {
+  border-top: 4px solid transparent;
+}
+
+.border-silks { border-color: $silks; }
+.border-hoop { border-color: $hoop; }
+.border-trapeze { border-color: $trapeze; }
+.border-acro { border-color: $acro; }
+.border-cali { border-color: $cali; }
+.border-pole { border-color: $pole; }
+
+h1 {
+  font-size: 1.4em;
+}
+h3 {
+  font-size: 1.1em;
+}
+
+.badge {
+  font-size: 1em;
+
+  + .badge {
+    margin-left: 4px;
+  }
+}
+
+.author-avatar {
+  height: 50px;
+  width: 50px;
+  float: right;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+
+}
