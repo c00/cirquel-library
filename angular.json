@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cirque-library": {
+    "cirquel-library": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cirque-library",
+            "outputPath": "dist/cirquel-library",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cirque-library:build"
+            "browserTarget": "cirquel-library:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cirque-library:build:production"
+              "browserTarget": "cirquel-library:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cirque-library:build"
+            "browserTarget": "cirquel-library:build"
           }
         },
         "test": {
@@ -100,10 +100,18 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/cirquel-library-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          }
         }
       }
     },
-    "cirque-library-e2e": {
+    "cirquel-library-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -111,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cirque-library:serve"
+            "devServerTarget": "cirquel-library:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cirque-library:serve:production"
+              "devServerTarget": "cirquel-library:serve:production"
             }
           }
         },
@@ -131,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "cirque-library"
+  "defaultProject": "cirquel-library"
 }

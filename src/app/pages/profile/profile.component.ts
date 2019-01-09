@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/model/Item';
-import { ItemService } from '../../../services/item-service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Author } from '../../model/Author';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
+import { ItemService } from '../../../services/item-service';
+import { Author } from '../../model/Author';
+import { Item } from '../../model/Item';
 
 @Component({
   selector: 'app-profile',
