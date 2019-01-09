@@ -39,7 +39,7 @@ import { BgImageDirective } from './bg-image.directive';
     BgImageDirective,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'cirquel-library'}),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     ModalModule.forRoot(),

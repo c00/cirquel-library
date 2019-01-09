@@ -1,0 +1,36 @@
+v8.11.3
+6.5.0
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 6.1.5
+Node: 8.11.3
+OS: linux x64
+Angular: 6.1.9
+... animations, common, compiler, compiler-cli, core, forms
+... http, language-service, platform-browser
+... platform-browser-dynamic, router
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.7.5
+@angular-devkit/build-angular     0.7.5
+@angular-devkit/build-optimizer   0.7.5
+@angular-devkit/build-webpack     0.7.5
+@angular-devkit/core              0.7.5
+@angular-devkit/schematics        0.7.5
+@angular/cli                      6.1.5
+@angular/platform-server          6.1.10
+@ngtools/webpack                  6.1.5
+@schematics/angular               0.7.5
+@schematics/update                0.7.5
+rxjs                              6.3.3
+typescript                        2.7.2
+webpack                           4.9.2
+    
