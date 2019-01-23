@@ -22,6 +22,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
     InlineSVGModule.forRoot({ baseUrl: '/assets/svg/' }),
+    TransferHttpCacheModule,
   ],
   providers: [
     ApiService,

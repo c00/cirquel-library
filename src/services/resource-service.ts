@@ -13,7 +13,9 @@ export class ResourceService {
   constructor(
     
   ) {
-    
+    //If we're on the server, don't bother either.
+    if (!document) return;
+
     // Shaka does not work on IOS / Safari, as Apple doesn't support DASH.
     // So let's not bother.    
     if (!this.canPlayHls) {

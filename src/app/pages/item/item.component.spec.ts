@@ -6,7 +6,7 @@ describe('ItemComponent', () => {
   let component: ItemComponent;
   let fixture: ComponentFixture<ItemComponent>;
 
-  beforeEach(async(() => {
+/*   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ItemComponent ]
     })
@@ -21,5 +21,5 @@ describe('ItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
 });

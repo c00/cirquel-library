@@ -22,7 +22,7 @@ export class ApiService {
     .toPromise()
     .catch(err => {
       console.error(err);
-      throw new Error(err);
+      throw err;
     });
   }
 
@@ -31,7 +31,7 @@ export class ApiService {
     .toPromise()
     .catch((err) => {
       console.error(err);
-      throw new Error(err);
+      throw err;
     });    
   }
 
@@ -40,7 +40,7 @@ export class ApiService {
     .toPromise()
     .catch((err) => {
       console.error(err);
-      throw new Error(err);
+      throw err;
     });    
   }
   

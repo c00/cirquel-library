@@ -6,7 +6,7 @@ describe('ItemCardComponent', () => {
   let component: ItemCardComponent;
   let fixture: ComponentFixture<ItemCardComponent>;
 
-  beforeEach(async(() => {
+  /* beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ItemCardComponent ]
     })
@@ -21,5 +21,5 @@ describe('ItemCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
 });

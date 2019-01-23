@@ -80,6 +80,9 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   private setupHls() {
+    //Server side there is no document.
+    if (!document) return;
+
     var source = document.createElement('source');
 
     source.src = this.resource.hlsUri;
