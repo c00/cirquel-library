@@ -1,0 +1,18 @@
+tasks: 
+  - name: echo
+    description: Reminding you.
+    params: 
+      message: TODO get a thing for Angular Universal
+  - name: deployRemote
+    description: Deploying remotely
+    label: deploy
+    params: 
+      source: '**/*'
+environments:
+  - name: Bessy
+    default: true
+    buildPath: dist/
+    isRemote: true
+    host: library.cirquel.com
+    deployPath: /var/www/cirquel/library/
+    keepDeployments: 5
