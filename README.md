@@ -16,5 +16,6 @@ Currently this still has to be done manually, because I'm happy I got angular un
 
 0. Install pubsy: `npm i -g pubsy`
 1. run `pubsy build`
+2. Restart forever... (MANUAL STEP BUT I'M LAZY SO HAVEN'T AUTOMATED IT YET. WHY IS MY SHIFT BUTTON STUCK?!)
 
 Note on automated deployments: Currently we create the symlinks before running npm install... That's kinda shitty.
