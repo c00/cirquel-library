@@ -35,12 +35,8 @@ export class VideoPlayerComponent implements OnInit {
     this.videoEl = this.videoRef.nativeElement;
     
     this.setupPlayerEvents();
-
-    if (this.rs.canPlayHls){
-      this.setupHls();
-    } else {
-      this.setupShaka();
-    }
+    this.setupHls();
+    this.setupShaka();
   }
 
   private setupPlayerEvents() {

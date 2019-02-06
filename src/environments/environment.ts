@@ -1,8 +1,8 @@
 import { EnvironmentBase } from './environment.base';
 
-//const ip = "192.168.1.109";
+const ip = "172.16.221.166";
 //const ip = "192.168.1.46";
-const ip = "127.0.0.1";
+//const ip = "127.0.0.1";
 
 export const environment: EnvironmentBase = {
   production: false,

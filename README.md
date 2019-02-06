@@ -12,8 +12,9 @@ Currently this still has to be done manually, because I'm happy I got angular un
 2. Copy the folders `node_modules` and `dist` to the server.
 3. Restart forever
 
-### Automatically (doesn't work yet)
+### Automatically
 
 0. Install pubsy: `npm i -g pubsy`
+1. run `pubsy build`
 
-4. Add task to restart `forever` on the server
+Note on automated deployments: Currently we create the symlinks before running npm install... That's kinda shitty.

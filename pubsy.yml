@@ -7,31 +7,26 @@ tasks:
       useBuildPath: false
   - name: npm
     description: Build Angular universal (SSR)
+    enabled: true
     params: 
       params: 
         - run
         - build:ssr
-  - name: copy
-    description: Add npm package info
-    label: npm
-    params: 
-      flatten: true
-      cwdSource: "."
-      source: package*.json
   - name: deployRemote
     description: Deploying remotely
     label: deploy
     params: 
       source: 
-        - "**/*"
+        - "dist/**/*"
+        - "package*.json"
   - name: npmRemote
     description: install node dependencies
     label: install-deps
 environments:
   - name: Bessy
     default: true
-    buildPath: dist/
+    buildPath: "./"
     isRemote: true
     host: library.cirquelapp.com
-    deployPath: /var/www/cirquel/library/tst2/
+    deployPath: /var/www/cirquel/library/
     keepDeployments: 5
