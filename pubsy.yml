@@ -1,18 +1,33 @@
 tasks: 
-  - name: echo
-    description: Reminding you.
+  - name: rm
+    description: Clean old build
+  - name: npm
+    description: Build Angular universal (SSR)
     params: 
-      message: TODO get a thing for Angular Universal
+      params: 
+        - run
+        - build:ssr
+  - name: copy
+    description: Add npm package info
+    label: npm
+    params: 
+      flatten: true
+      cwdSource: "."
+      source: package*.json
   - name: deployRemote
     description: Deploying remotely
     label: deploy
     params: 
-      source: '**/*'
+      source: 
+        - "**/*"
+  - name: npmRemote
+    description: install node dependencies
+    label: install-deps
 environments:
   - name: Bessy
     default: true
     buildPath: dist/
     isRemote: true
-    host: library.cirquel.com
-    deployPath: /var/www/cirquel/library/
+    host: library.cirquelapp.com
+    deployPath: /var/www/cirquel/library/tst2/
     keepDeployments: 5

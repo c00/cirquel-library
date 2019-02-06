@@ -1,6 +1,6 @@
-# CirqueLibrary
+# Cirque Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
+The online lightweight variant of Cirquel. This will soon replace the normal website of cirquelapp.com.
 
 ## Build for Server side rendering (Angular Universal)
 
@@ -8,12 +8,12 @@ Currently this still has to be done manually, because I'm happy I got angular un
 
 ### Manually
 
-1. Copy the folders `node_modules` and `dist` to the server.
-2. Restart forever
+1. `npm run build:ssr`
+2. Copy the folders `node_modules` and `dist` to the server.
+3. Restart forever
 
 ### Automatically (doesn't work yet)
 
 0. Install pubsy: `npm i -g pubsy`
-1. Add build task for Angular Universal to Pubsy
-2. Make task that copies `node_modules` and `dist` (Probably better than doing `npm i` on the server)
-2. Add task to restart `forever` on the server
+
+4. Add task to restart `forever` on the server
