@@ -1,6 +1,10 @@
 tasks: 
   - name: rm
     description: Clean old build
+    label: clean
+    params:
+      targets: "dist"
+      useBuildPath: false
   - name: npm
     description: Build Angular universal (SSR)
     params: 
