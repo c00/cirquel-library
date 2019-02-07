@@ -23,6 +23,7 @@ import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { MetaService } from '../services/meta-service';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     ApiService,
     ItemService,
     ResourceService,
+    MetaService,
   ],
   bootstrap: [AppComponent]
 })

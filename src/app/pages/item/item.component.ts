@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ItemService } from '../../../services/item-service';
+import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+
+import { ItemService } from '../../../services/item-service';
+import { MetaService } from '../../../services/meta-service';
 import { Item } from '../../model/Item';
-import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -18,23 +18,11 @@ export class ItemComponent {
   constructor(
     private route: ActivatedRoute,
     private itemService: ItemService,
-    private meta: Meta,
-    private title: Title,
+    private meta: MetaService
   ) { 
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       this.getItem(Number(paramMap.get('id')));
     });
-  }
-
-  private getDescription() {
-    let result = `${this.item.itemName.displayName}`;
-    if (this.item.description) {
-      result += `: ${this.item.description}`
-    }
-
-    result += " - Cirquel, The Crowdsourced Circus Library for Aerial Silks, Hoops, Trapeze, Pole and Acro Balance!"
-
-    return result;
   }
 
   private getItem(id: number) {
@@ -43,7 +31,7 @@ export class ItemComponent {
     .then((result) => {
       this.state = 'idle';
       this.item = result;
-      this.setMeta();
+      this.meta.setItemInfo(result);
     })
     .catch((e) => {
       this.state = 'error';
@@ -51,19 +39,6 @@ export class ItemComponent {
     });
   }
 
-  private setMeta() {
-    this.meta.updateTag({ 
-      name: 'description', 
-      content: this.getDescription()
-    });
-
-    this.meta.addTag({ 
-      name: 'author', 
-      content: this.item.author.userName
-    });
-
-    this.title.setTitle(`${this.item.itemName.displayName} - Cirquel - The Crowdsourced Circus Library!`);
-
-  }
+  
 
 }

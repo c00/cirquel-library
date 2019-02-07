@@ -8,6 +8,7 @@ export interface BaseResource {
     date?: number;
     type: string;
     link?: string;
+    imgBase?: string;
 }
 
 export interface PhotoResource {

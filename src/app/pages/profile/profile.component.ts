@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ItemService } from '../../../services/item-service';
 import { Author } from '../../model/Author';
 import { Item } from '../../model/Item';
+import { MetaService } from '../../../services/meta-service';
 
 @Component({
   selector: 'app-profile',
@@ -20,8 +21,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private itemService: ItemService, 
     private route: ActivatedRoute,
-    private meta: Meta,
-    private title: Title,
+    private meta: MetaService,
   ) {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       this.getUserProfile(paramMap.get('stub'));
@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
         this.state = 'idle';
         this.items = result.items;
         this.author = result.author;
-        this.setMeta();
+        this.meta.setUserInfo(this.author, this.items);
         
       })
       .catch((e) => {
@@ -51,20 +51,5 @@ export class ProfileComponent implements OnInit {
         console.error(e);
       });
   }
-
-  private setMeta() {
-    this.meta.updateTag({
-      name: 'description',
-      content: `${this.author.userName} on Cirquel.`
-    });
-
-    this.meta.addTag({
-      name: 'author',
-      content: this.author.userName
-    });
-
-    this.title.setTitle(`${this.author.userName} - Cirquel`);
-
-  }
-
+  
 }
