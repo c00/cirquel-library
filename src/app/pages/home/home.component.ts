@@ -20,6 +20,10 @@ export class HomeComponent implements OnInit {
     
   }
 
+  public openDownloadModal() {
+    console.warn("TODO");
+  }
+
   private getItems() {
     this.state = 'loading';
     this.itemService.getItems(0, 9)

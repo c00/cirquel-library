@@ -1,3 +1,11 @@
+header {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+  font-weight: 600;
+}
+
 .navbar-brand {
   font-size: 1.6em; 
 
@@ -16,4 +24,8 @@
 .modal-logo {
   height: 250px;  
   padding: 20px;
+}
+
+.btn-nav {
+  padding: .5rem .8rem;
 }

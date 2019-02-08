@@ -1,4 +1,22 @@
-<div class="card-container row" *ngIf="items">
-  <app-item-card [showCta]="false" *ngFor="let i of items" [item]="i" class="col-md-6 col-lg-4 p-2"></app-item-card>
-</div>
+<section class="intro pt-2">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md intro-left">
+        <h2>CIRQUEL</h2>
+        <h1>The Crowdsourced <br>
+          Circus Library. <br>
+          Join the Cirquel</h1>
 
+        <button (click)="openDownloadModal()" class="btn btn-outline-primary btn-white">Download App</button>
+      </div>
+      <div class="col-md intro-right">
+        <img src="/assets/img/screenshot.png">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="card-container row" *ngIf="items">
+    <app-item-card [showCta]="false" *ngFor="let i of items" [item]="i" class="col-md-6 col-lg-4 p-2"></app-item-card>
+  </div>
+</div>

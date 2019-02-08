@@ -1,3 +1,54 @@
+@import '../../../styles/styles';
+.intro {
+  background-image: url('../../../assets/img/background.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+
+  @include media-breakpoint-up(lg) { 
+    height: 650px;
+    margin-bottom: 150px;
+  }
+}
+
+.btn-white {
+  border-color: #fff;
+  color: #fff;
+  font-weight: 600;
+
+  &:hover {
+    border-color: $purple;
+  }
+}
+
+.intro-left {
+  h1, h2 {
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
+}
+
+.intro-right {
+  text-align: center;
+
+  img {
+    height: 800px;
+  }
+}
+
 .card-container {
   margin-bottom: 2em;
 }

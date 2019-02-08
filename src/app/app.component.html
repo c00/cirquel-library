@@ -1,20 +1,24 @@
-<app-background></app-background>
-<header class="container">
-
+<!-- <app-background></app-background> -->
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <a class="navbar-brand" href="https://cirquelapp.com"> <img src="assets/svg/silk-logo.svg" class="logo mr-2"> Cirquel Library</a>
-    <div class="collapse navbar-collapse" [collapse]="collapsed">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="btn btn-primary" href="javascript:void(0)" (click)="openModal(template)">Download App</a>
-        </li>
-      </ul>
+    <div class="container">
+      <a class="navbar-brand" href="https://cirquelapp.com"> <img src="assets/svg/silk-logo.svg" class="logo mr-2">
+        Cirquel</a>
+      <div class="collapse navbar-collapse" [collapse]="collapsed">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0)">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0)">Posting Guidelines</a></li>
+          <li class="nav-item">
+            <button class="btn btn-nav btn-primary" (click)="openModal(template)">Download App</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
 
 <!-- Begin page content -->
-<main role="main" class="container mt-2 position-relative">
+<main role="main" class="position-relative">
   <router-outlet></router-outlet>
 </main>
 
@@ -33,7 +37,8 @@
     </h5>
 
     <p>
-      <strong>Cirquel</strong> is a free, crowdsourced and open source circus library that aims to create a common dictionary for all
+      <strong>Cirquel</strong> is a free, crowdsourced and open source circus library that aims to create a common
+      dictionary for all
       things acrobatics. Whatever your cirque preferences are, Aerial Silks, Aerial Hoops / Lyra, Trapeze, Pole Dancing
       and Acro Balance, we got you covered.
     </p>
