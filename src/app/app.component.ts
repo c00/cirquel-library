@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { DialogService } from 'src/services/dialog-service';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,11 @@ export class AppComponent {
   modalRef: BsModalRef;
   collapsed = true;
   
-  constructor(private modalService: BsModalService) {
+  constructor(private dialogs: DialogService) {
 
   }
 
-  public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  public openModal() {
+    this.dialogs.showDownloadModal();
   }
 }

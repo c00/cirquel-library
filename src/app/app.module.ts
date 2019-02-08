@@ -24,6 +24,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { MetaService } from '../services/meta-service';
+import { DialogService } from 'src/services/dialog-service';
+import { DownloadModalComponent } from './modals/download-modal/download-modal.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,10 @@ import { MetaService } from '../services/meta-service';
     VideoPlayerComponent,
     ProfileComponent,
     BgImageDirective,
+    DownloadModalComponent,
+  ],
+  entryComponents: [
+    DownloadModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cirquel-library'}),
@@ -54,6 +60,7 @@ import { MetaService } from '../services/meta-service';
     ItemService,
     ResourceService,
     MetaService,
+    DialogService,
   ],
   bootstrap: [AppComponent]
 })

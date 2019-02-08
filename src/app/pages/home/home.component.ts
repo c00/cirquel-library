@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ItemService } from '../../../services/item-service';
 import { Item } from '../../model/Item';
+import { DialogService } from '../../../services/dialog-service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   state = 'idle';
   items: Item[];
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, private dialogs: DialogService) {
     this.getItems();
   }
 
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   public openDownloadModal() {
-    console.warn("TODO");
+    this.dialogs.showDownloadModal();
   }
 
   private getItems() {

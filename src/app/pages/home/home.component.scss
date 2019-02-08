@@ -1,4 +1,5 @@
 @import '../../../styles/styles';
+
 .intro {
   background-image: url('../../../assets/img/background.jpg');
   background-attachment: fixed;
@@ -7,7 +8,6 @@
   background-size: cover;
 
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
 
   @include media-breakpoint-up(lg) { 
     height: 650px;
@@ -46,6 +46,85 @@
 
   img {
     height: 800px;
+  }
+}
+
+.about {
+  font-size: 2rem;
+  padding-bottom: 3em;
+  padding-top: 3em;
+
+  h1 {
+    padding-bottom: 2em;
+    font-weight: 600;
+    
+    &::after {
+      content: ' ';
+      border-bottom: 2px solid $primary;
+      width: 30%;
+      display: block;
+      height: 1em;
+    }
+  }
+
+  .text {
+    font-size: 1.2rem;
+    line-height: 2;
+    padding-left: 2em;
+    color: $gray-600;
+  }
+}
+
+.download {
+  text-align: center;
+  background-color: $purple;
+  color: $light;
+  padding-top: 10em;
+  padding-bottom: 10em;
+
+  h1 {
+    font-weight: 600;
+    margin-bottom: 1em;
+
+    &::after {
+      content: ' ';
+      margin: auto;
+      border-bottom: 2px solid $secondary;
+      width: 3em;
+
+      display: block;
+      height: 1em;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.footer {
+  background-color: $gray-900;
+  color: $light;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  line-height: 2em;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    &::after {
+      content: ' ';
+      border-bottom: 2px solid $gray-600;
+      width: 3em;
+
+      display: block;
+      height: 1.2em;
+      margin-bottom: 1em;
+    }    
+  }
+
+  a {
+    color: $blue;
   }
 }
 
