@@ -1,13 +1,17 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { DialogService } from 'src/services/dialog-service';
 
 import { ApiService } from '../services/api';
 import { ItemService } from '../services/item-service';
+import { MetaService } from '../services/meta-service';
 import { ResourceService } from '../services/resource-service';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -18,16 +22,14 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { ImagePipe } from './image.pipe';
+import { DownloadModalComponent } from './modals/download-modal/download-modal.component';
+import { MessageModalComponent } from './modals/message-modal/message-modal.component';
+import { GuidelinesComponent } from './pages/guidelines/guidelines.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { MetaService } from '../services/meta-service';
-import { DialogService } from 'src/services/dialog-service';
-import { DownloadModalComponent } from './modals/download-modal/download-modal.component';
-import { MessageModalComponent } from './modals/message-modal/message-modal.component';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
     BgImageDirective,
     DownloadModalComponent,
     MessageModalComponent,
+    GuidelinesComponent,
+    FooterComponent,
   ],
   entryComponents: [
     DownloadModalComponent,
@@ -52,7 +56,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cirquel-library'}),
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {anchorScrolling: 'enabled'}),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

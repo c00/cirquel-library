@@ -1,55 +1,6 @@
 @import '../../../styles/styles';
 
-.intro {
-  background-image: url('../../../assets/img/background.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  color: #fff;
-
-  @include media-breakpoint-up(lg) { 
-    height: 650px;
-    margin-bottom: 150px;
-  }
-}
-
-.btn-white {
-  border-color: #fff;
-  color: #fff;
-  font-weight: 600;
-
-  &:hover {
-    border-color: $purple;
-  }
-}
-
-.intro-left {
-  h1, h2 {
-    font-weight: 600;
-  }
-
-  h1 {
-    font-size: 4em;
-    margin-bottom: 1em;
-  }
-
-  h2 {
-    font-size: 2em;
-    margin-bottom: 2em;
-  }
-}
-
-.intro-right {
-  text-align: center;
-
-  img {
-    height: 800px;
-  }
-}
-
-.about {
+.guidelines {
   font-size: 2rem;
   padding-bottom: 3em;
   padding-top: 3em;
@@ -75,12 +26,21 @@
   }
 }
 
-.download {
+.faq {
   text-align: center;
   background-color: $purple;
   color: $light;
   padding-top: 10em;
   padding-bottom: 10em;
+
+  a {
+    color: $blue;
+  }
+
+  p {
+    line-height: 1.5em;
+    margin-bottom: 3em;
+  }
 
   h1 {
     font-weight: 600;
@@ -99,8 +59,4 @@
   p {
     font-size: 1.2rem;
   }
-}
-
-.card-container {
-  margin-bottom: 2em;
 }

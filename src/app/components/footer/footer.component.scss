@@ -1,0 +1,27 @@
+@import '../../../styles/styles';
+.footer {
+  background-color: $gray-900;
+  color: $light;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  line-height: 2em;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    &::after {
+      content: ' ';
+      border-bottom: 2px solid $gray-600;
+      width: 3em;
+
+      display: block;
+      height: 1.2em;
+      margin-bottom: 1em;
+    }    
+  }
+
+  a {
+    color: $blue;
+  }
+}

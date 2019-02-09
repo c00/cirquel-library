@@ -11,9 +11,8 @@ The online lightweight variant of Cirquel. This will soon replace the normal web
 Note on automated deployments: Currently we create the symlinks before running npm install... That's kinda shitty.
 
 ## Todo on full site 
-Make contact modal that works
-Make site links point somewhere
+
+- User Agreement
+- Privacy Policy
+
 Figure out how to keep static assets working (Probably some nginx setting)
-Fix other links
-  FAQ
-  Guidelines

@@ -17,11 +17,15 @@ export class MetaService {
     this.imagePipe = new ImagePipe();
   }
 
+  public setPageInfo(info: MetaInfo) {
+    this.setInfo(info);
+  }
+
   public setItemInfo(item: Item) {
 
-    let current: MetaInfo = { 
-      title: `${item.itemName.displayName} - Cirquel`, 
-      description: this.getDescription(item), 
+    let current: MetaInfo = {
+      title: `${item.itemName.displayName} - Cirquel`,
+      description: this.getDescription(item),
       imageUrl: this.imagePipe.transform(item.resource.imgBase),
       created: item.created,
       modified: item.created,
@@ -42,8 +46,8 @@ export class MetaService {
     const highest = sortedItems[sortedItems.length - 1] || null;
 
     let current: MetaInfo = {
-      title: `${author.userName} on Cirquel`, 
-      description: `The profile of ${author.userName} on Cirquel! The crowdsourced Circus Library`, 
+      title: `${author.userName} on Cirquel`,
+      description: `The profile of ${author.userName} on Cirquel! The crowdsourced Circus Library`,
       imageUrl: this.imagePipe.transform(author.imgBase),
       created: lowest.created,
       modified: highest.created,
@@ -59,7 +63,7 @@ export class MetaService {
       result = item.description;
     } else {
       result = "Cirquel is a crowdsourced Circus Library for all your favorite Circus Arts.";
-    }    
+    }
 
     return result;
   }
@@ -70,30 +74,35 @@ export class MetaService {
 
   private setInfo(info: MetaInfo) {
 
-    /* Standard HTML tags */
+    /* Set titles */
     this.title.setTitle(info.title);
-    this.meta.updateTag({ name: 'description', content: info.description });
-    this.meta.addTag({ name: 'author', content: info.author });
-
-    /* Google tags */
     this.meta.addTag({ itemprop: "name", content: info.title });
-    this.meta.addTag({ itemprop: "description", content: info.description });
-    this.meta.addTag({ itemprop: "image", content: info.imageUrl });
-
-    /* twitter tags */
     this.meta.addTag({ name: "twitter:title", content: info.title });
-    this.meta.addTag({ name: "twitter:description", content: info.description });
-    this.meta.addTag({ name: "twitter:image:src", content: info.imageUrl });
-
-    /* Opengraph (FB) */
     this.meta.addTag({ name: "og:title", content: info.title });
-    this.meta.addTag({ name: "og:description", content: info.description });
-    this.meta.addTag({ name: "og:image", content: info.imageUrl });
 
+    /* Set author tag */
+    if (info.author) this.meta.addTag({ name: 'author', content: info.author });
+
+    /* Set descriptions */
+    if (info.description) {
+      this.meta.updateTag({ name: 'description', content: info.description });
+      this.meta.addTag({ itemprop: "description", content: info.description });
+      this.meta.addTag({ name: "twitter:description", content: info.description });
+      this.meta.addTag({ name: "og:description", content: info.description });
+    }
+
+    /* Set image urls */
+    if (info.imageUrl) {
+      this.meta.addTag({ itemprop: "image", content: info.imageUrl });
+      this.meta.addTag({ name: "twitter:image:src", content: info.imageUrl });
+      this.meta.addTag({ name: "og:image", content: info.imageUrl });
+    }
+
+    /* Set dates */
     if (info.created) this.meta.addTag({ name: "article:published_time", content: this.getIsoString(info.created) });
     if (info.modified) this.meta.addTag({ name: "article:modified_time", content: this.getIsoString(info.modified) });
   }
-  
+
 }
 
 

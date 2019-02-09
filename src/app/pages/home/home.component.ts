@@ -17,17 +17,10 @@ export class HomeComponent implements OnInit {
     this.getItems();
   }
 
-  ngOnInit() {
-    //debug
-    this.dialogs.showMessageModal();
-  }
+  public ngOnInit() { }
 
   public openDownloadModal() {
     this.dialogs.showDownloadModal();
-  }
-
-  public send() {
-    this.dialogs.showMessageModal();
   }
 
   private getItems() {

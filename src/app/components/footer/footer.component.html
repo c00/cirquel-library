@@ -1,0 +1,33 @@
+<section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Cirquel</h1>
+        <p>
+          Cirquel is an initiative by <a href="https://covle.com">Covle</a>. I am a freelance developer with a small
+          team for custom IT solutions and apps.
+          Feel free to contact me if you have a project.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h1>Contact</h1>
+        <p>
+          Find us somewhere in the silks!
+        </p>
+        <p>
+          Or send an <a href="javascript:void(0)" (click)="send()">email</a>.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h1>Site links</h1>
+        <ul class="list-unstyled">
+          <li><a routerLink="/guidelines">Posting Guidelines</a></li>
+          <li><a [routerLink]="['/guidelines']" fragment="faq">FAQ</a></li>
+          <li><a href="user-agreement.txt">User Agreement</a></li>
+          <li><a href="privacy-policy.txt">Privacy Policy</a></li>
+          <li><a href="https://github.com/c00/cirquel-app">Github Repo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
