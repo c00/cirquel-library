@@ -1,3 +1,38 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Send us a message!</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <div class="modal-body">
-  bk
+  <div *ngIf="success">
+    <p>Thank you for your message! We will be in touch shortly!</p>
+    <button class="btn btn-primary" (click)="dismiss()">Awesome!</button>
+  </div>
+  <form (submit)="send()" [formGroup]="form" novalidate *ngIf="!success">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="name">Your name</label>
+      <input formControlName="name" type="text" class="form-control col-sm-8" id="name" placeholder="e.g. Joe">
+    </div>
+    <div *ngIf="validated && form.controls['name'].invalid" class="form-text text-danger">At least give me a name!</div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label" for="email">Your email</label>
+      <input type="email" formControlName="email" class="form-control col-sm-8" id="email"
+        placeholder="e.g. joe@gmail.com">
+    </div>
+    <div *ngIf="validated && form.controls['email'].invalid" class="form-text text-danger">How will I contact you
+      without an email address?</div>
+
+    <div class="form-group">
+      <label for="message">Your message</label>
+      <textarea formControlName="message" class="form-control" rows="3" id="message" placeholder="Type here"></textarea>
+      <span *ngIf="validated && form.controls['message'].invalid" class="form-text text-danger">This field is
+        required.</span>
+    </div>
+
+    <button [disabled]="loading" type="submit" class="btn btn-primary">Send!</button>
+    <span *ngIf="error" class="form-text text-danger">Something went wrong when trying to submit your request. Please
+      try again later.</span>
+  </form>
 </div>

@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    //debug
+    this.dialogs.showMessageModal();
   }
 
   public openDownloadModal() {

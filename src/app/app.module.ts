@@ -27,6 +27,7 @@ import { MetaService } from '../services/meta-service';
 import { DialogService } from 'src/services/dialog-service';
 import { DownloadModalComponent } from './modals/download-modal/download-modal.component';
 import { MessageModalComponent } from './modals/message-modal/message-modal.component';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,8 @@ import { MessageModalComponent } from './modals/message-modal/message-modal.comp
     BrowserModule.withServerTransition({appId: 'cirquel-library'}),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
     InlineSVGModule.forRoot({ baseUrl: '/assets/svg/' }),
