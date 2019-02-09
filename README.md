@@ -14,3 +14,6 @@ Note on automated deployments: Currently we create the symlinks before running n
 Make contact modal that works
 Make site links point somewhere
 Figure out how to keep static assets working (Probably some nginx setting)
+Fix other links
+  FAQ
+  Guidelines

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { DownloadModalComponent } from '../app/modals/download-modal/download-modal.component';
+import { MessageModalComponent } from '../app/modals/message-modal/message-modal.component';
 
 
 
@@ -15,14 +16,11 @@ export class DialogService {
   }
 
   public showDownloadModal() {
-    let modal: BsModalRef;
-    const initialState = {
-      
-    };
-    modal = this.modalService.show(DownloadModalComponent, { initialState });
-    
-    console.log(modal);
+    this.modalService.show(DownloadModalComponent);
+  }
 
+  public showMessageModal() {
+    this.modalService.show(MessageModalComponent);
   }
 
 

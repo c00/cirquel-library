@@ -26,6 +26,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { MetaService } from '../services/meta-service';
 import { DialogService } from 'src/services/dialog-service';
 import { DownloadModalComponent } from './modals/download-modal/download-modal.component';
+import { MessageModalComponent } from './modals/message-modal/message-modal.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,11 @@ import { DownloadModalComponent } from './modals/download-modal/download-modal.c
     ProfileComponent,
     BgImageDirective,
     DownloadModalComponent,
+    MessageModalComponent,
   ],
   entryComponents: [
     DownloadModalComponent,
+    MessageModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cirquel-library'}),

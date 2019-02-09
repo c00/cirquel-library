@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit {
     this.dialogs.showDownloadModal();
   }
 
+  public send() {
+    this.dialogs.showMessageModal();
+  }
+
   private getItems() {
     this.state = 'loading';
     this.itemService.getItems(0, 9)
