@@ -1,4 +1,4 @@
-<div class="mosaic-container" #container (window:resize)="onResize()">
+<div class="mosaic-container" #container (window:resize)="onResize()" [style.height.px]="squareSize * showLines">
   <ul class="list-unstyled">
       <li [appBgImage]="s.itemImgBase | image : 'md'" class="square" *ngFor="let s of squares" [style.height.px]="squareSize" [style.width.px]="squareSize"></li>
   </ul>
