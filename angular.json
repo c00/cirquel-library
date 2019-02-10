@@ -24,8 +24,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/apple-app-site-association"
+              "src/assets"
             ],
             "styles": [
               "src/styles/styles.scss"
@@ -84,8 +83,7 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/apple-app-site-association"
+              "src/assets"
             ]
           }
         },

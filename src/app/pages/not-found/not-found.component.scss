@@ -1,0 +1,31 @@
+@import '../../../styles/styles';
+.intro {
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.download {
+  text-align: center;
+  background-color: $purple;
+  color: $light;
+  padding-top: 10em;
+  padding-bottom: 10em;
+
+  h1 {
+    font-weight: 600;
+    margin-bottom: 1em;
+
+    &::after {
+      content: ' ';
+      margin: auto;
+      border-bottom: 2px solid $secondary;
+      width: 3em;
+
+      display: block;
+      height: 1em;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}

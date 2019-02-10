@@ -1,6 +1,7 @@
-import { Component, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { DialogService } from 'src/services/dialog-service';
+import { Component } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+
+import { DialogService } from '../services/dialog-service';
 
 @Component({
   selector: 'app-root',

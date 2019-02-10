@@ -7,9 +7,9 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { InlineSVGModule } from 'ng-inline-svg';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { DialogService } from 'src/services/dialog-service';
 
 import { ApiService } from '../services/api';
+import { DialogService } from '../services/dialog-service';
 import { ItemService } from '../services/item-service';
 import { MetaService } from '../services/meta-service';
 import { ResourceService } from '../services/resource-service';
@@ -18,6 +18,7 @@ import { appRoutes } from './app.routes';
 import { BgImageDirective } from './bg-image.directive';
 import { BackgroundComponent } from './components/background/background.component';
 import { DownloadCtaComponent } from './components/download-cta/download-cta.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
@@ -29,7 +30,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [

@@ -12,7 +12,9 @@ Note on automated deployments: Currently we create the symlinks before running n
 
 ## Todo on full site 
 
-- User Agreement
-- Privacy Policy
-
 Figure out how to keep static assets working (Probably some nginx setting)
+- AU, PP and apple site forwarding nonsense
+Make recent thingy
+Make post about t-shirts
+
+Restart nginx, test settings on library
