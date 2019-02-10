@@ -7,3 +7,9 @@ export interface UserItemsResult {
   pages: number;
   criteria: any;
 }
+
+export interface MosaicItem {
+  itemImgBase: string;
+  itemId: number;
+  author: Author;
+}

@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { ApiService } from './api';
 import { Item } from '../app/model/Item';
-import { UserItemsResult } from '../app/model/ApiResult';
+import { UserItemsResult, MosaicItem } from '../app/model/ApiResult';
 
 @Injectable()
 export class ItemService {
@@ -32,6 +32,10 @@ export class ItemService {
 
   public getUserItems(stub: string): Promise<UserItemsResult> {
     return this.api.get(`user-profile/${stub}`);
+  }
+
+  public getMosaic(amount: number): Promise<MosaicItem[]> {
+    return this.api.get(`mosaic/${amount}`);
   }
 
   public getItem(id: number){

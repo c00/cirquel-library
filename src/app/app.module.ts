@@ -30,6 +30,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MosaicComponent } from './components/mosaic/mosaic.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MessageModalComponent,
     GuidelinesComponent,
     FooterComponent,
+    MosaicComponent,
   ],
   entryComponents: [
     DownloadModalComponent,
