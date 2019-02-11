@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ContentChildren, ViewChildren, QueryList } from '@angular/core';
 import { ItemService } from 'src/services/item-service';
 
 import { MosaicItem } from '../../model/ApiResult';
@@ -8,15 +8,20 @@ import { MosaicItem } from '../../model/ApiResult';
   templateUrl: './mosaic.component.html',
   styleUrls: ['./mosaic.component.scss']
 })
-export class MosaicComponent implements OnInit, AfterViewInit {
+export class MosaicComponent {
   @ViewChild('container') container: ElementRef;
+  @ViewChildren('squares') squareElements: QueryList<ElementRef>;
 
-  squareSize: number = 50;
   itemsToLoad = 32;
-  wantedSize = 150;
-  showLines = 2;
-
   squares: MosaicItem[] = [];
+
+  showLines: number;
+  squareSize: number;
+
+  get containerHeight() {
+    if (!this.showLines || !this.squareSize) return null;
+    return this.showLines * this.squareSize;
+  }
 
   constructor(private itemService: ItemService) {
     this.load();
@@ -24,26 +29,38 @@ export class MosaicComponent implements OnInit, AfterViewInit {
 
   private async load() {
     this.squares = await this.itemService.getMosaic(this.itemsToLoad);
+    setTimeout(() => { this.calcGrid(); } );
   }
 
-  public ngOnInit() {
-  }
-
-  public ngAfterViewInit() {
-    console.log("ngAfterViewChecked");
-    this.calcSquareSize();
-  }
-
+  private timeout;
   public onResize() {
-    //todo debounce
-    this.calcSquareSize();
+    //Reset it
+    if (this.timeout) clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(() => {
+      this.calcGrid();
+    }, 100);
   }
 
-  private calcSquareSize() {
-    console.log("Recalc");
+  private calcGrid() {
+    //Return if some stuff isn't initialized yet.
+    if (!this.squareElements.first || !this.container || !this.squares) return;
+
+    console.log('recalc');
+
     const containerWidth = this.container.nativeElement.getBoundingClientRect().width;
-    const imagesPerRow = Math.floor(containerWidth / this.wantedSize);
-    this.squareSize = Math.floor(containerWidth / imagesPerRow);
+    const squareWidth = this.squareElements.first.nativeElement.getBoundingClientRect().width;
+    const imagesPerRow = Math.round(containerWidth / squareWidth);
+
+    const bottomRowSquares = this.squares.length % imagesPerRow;
+    const rows = Math.ceil(this.squares.length / imagesPerRow);
+
+    this.squareSize = squareWidth;
+    if (bottomRowSquares === 0) {
+      this.showLines = null;
+    } else {
+      this.showLines = rows - 1;
+    }
   }
 
 }

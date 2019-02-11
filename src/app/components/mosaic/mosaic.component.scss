@@ -1,6 +1,9 @@
 @import '../../../styles/styles';
 
 .mosaic-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -8,11 +11,10 @@
 
 .square {
   position: relative;
-  $size: 60px;
-  display: inline-block;
-  height: $size;
-  width: $size;
   overflow: hidden;
+
+  max-width: 200px;
+  padding-top: 100%;
 
   background-size: cover;
   background-position: center;
