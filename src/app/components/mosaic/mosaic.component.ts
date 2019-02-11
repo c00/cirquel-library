@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ContentChildren, ViewChildren, QueryList } from '@angular/core';
-import { ItemService } from 'src/services/item-service';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ItemService } from '../../../services/item-service';
 
 import { MosaicItem } from '../../model/ApiResult';
 
@@ -16,6 +16,7 @@ export class MosaicComponent {
   squares: MosaicItem[] = [];
 
   showLines: number;
+  maxLines = 4;
   squareSize: number;
 
   get containerHeight() {
@@ -54,11 +55,15 @@ export class MosaicComponent {
     const rows = Math.ceil(this.squares.length / imagesPerRow);
 
     this.squareSize = squareWidth;
-    if (bottomRowSquares === 0) {
+    if (rows > this.maxLines) {
+      this.showLines = this.maxLines;
+    } else if (bottomRowSquares === 0) {
       this.showLines = null;
     } else {
       this.showLines = rows - 1;
     }
+
+    
   }
 
 }

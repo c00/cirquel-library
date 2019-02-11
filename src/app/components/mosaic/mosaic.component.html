@@ -1,4 +1,4 @@
-<div class="mosaic-container" #container (window:resize)="onResize($event)" [style.height.px]="containerHeight">
+<div class="mosaic-container" #container (window:resize)="onResize()" [style.height.px]="containerHeight">
   <div #squares [appBgImage]="s.itemImgBase | image : 'sq'" class="square" *ngFor="let s of squares">
   </div>
 </div>
