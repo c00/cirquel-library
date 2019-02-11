@@ -46,8 +46,6 @@ export class MosaicComponent {
     //Return if some stuff isn't initialized yet.
     if (!this.squareElements.first || !this.container || !this.squares) return;
 
-    console.log('recalc');
-
     const containerWidth = this.container.nativeElement.getBoundingClientRect().width;
     const squareWidth = this.squareElements.first.nativeElement.getBoundingClientRect().width;
     const imagesPerRow = Math.round(containerWidth / squareWidth);
