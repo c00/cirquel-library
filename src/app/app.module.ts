@@ -31,6 +31,7 @@ import { ItemComponent } from './pages/item/item.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MosaicComponent } from './components/mosaic/mosaic.component';
+import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MosaicComponent } from './components/mosaic/mosaic.component';
     GuidelinesComponent,
     FooterComponent,
     MosaicComponent,
+    PasswordResetComponent,
   ],
   entryComponents: [
     DownloadModalComponent,
