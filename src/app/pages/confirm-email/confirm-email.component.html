@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="card card-form col-md-8 mt-4" *ngIf="loading">
+    <div class="card-body">
+      <h5 class="card-title">Confirming your email address...</h5>
+      <p class="card-text">
+        Almost there...
+      </p>
+    </div>
+  </div>
+
+  <div class="card card-form col-md-8 mt-4" *ngIf="!loading">
+    <div class="card-body">
+      <h5 class="card-title">Thank you!</h5>
+      <p class="card-text">
+        Your email address has been confirmed! Thanks for using Cirquel!
+      </p>
+      <a routerLink="/" class="btn btn-primary">Go home</a>
+    </div>
+  </div>
+
+</div>
