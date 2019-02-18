@@ -1,0 +1,69 @@
+<section class="shirts">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Shirts Giveaway!</h1>
+        <img src="/assets/svg/silk-logo.svg">
+      </div>
+      <div class="col-md text">
+        <p>
+          The only way for Cirquel to grow, is for people like you to contribute! But what's in it for you, you ask?
+          <strong>Free shirts!</strong>
+        </p>
+
+        <p>We've got training tank tops and normal t-shirts. There's 2 different designs. Check it out!</p>
+
+        <div class="row">
+          <div class="col-lg-4 images" *ngFor="let i of images">
+            <a (click)="openModal(i.name)" href="javascript:;">
+              <img [src]="getImage(i.name)" class="rounded">
+            </a>
+            <p><a (click)="openModal(i.name)" href="javascript:;">{{i.text}}</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="shirts">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>How to get one</h1>
+      </div>
+      <div class="col-md text">
+
+        <p>
+          This promotion is on for as long as we have shirts. We had 100 printed, so the stock is limited.
+          Here's what you need to do:
+        </p>
+        <p>
+          <strong>Add 5 original tricks to Cirquel.</strong> They can be of any combination of categories, or all in the
+          same category. It doesn't matter. As long as you are the first one to add that particular trick, you're good!
+          Even if your trick already existed, but your variation is arguably different, then that will do.
+        </p>
+        <p>
+          <strong>Fill out the form</strong> by clicking on the button below. The information in the form is only used
+          to be able to get the shirts to you.
+        </p>
+
+        <p>
+          <strong>Help us out if you can!</strong> We would like to send multiple shirts per shipment, for you to redestribute locally. We
+          will, of course, cover the shipping costs. I would just require you to send out some shirts. <br>
+
+          I'm sending everything from Asia, so sending lots of single-shirt-shipments around the world will be more
+          costly then sending out larger packages to a country and redistributing it locally. Your help would be very
+          much appreciated! I will even throw in an extra shirt for you!
+        </p>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdq9W6qQMOoZHG7iVBNQjtyAZiQN6exACx6-DPwsigsBLLnTQ/viewform" class="btn btn-secondary">FILL OUT THE FORM</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

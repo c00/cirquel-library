@@ -1,3 +1,5 @@
+@import '../styles/styles';
+
 header {
   font-family: 'Montserrat', sans-serif;
 }
@@ -22,4 +24,15 @@ header {
 
 .btn-nav {
   padding: .5rem .8rem;
+}
+
+.nav-promo {
+  border: 1px solid $white;
+  border-radius: 4px;
+  transition: background-color ease .3s;
+
+  &:hover {
+    background-color: $warning;
+    border-color: $warning;
+  }
 }

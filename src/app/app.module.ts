@@ -33,6 +33,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
 import { ConfirmEmailComponent } from './pages/confirm-email/confirm-email.component';
+import { ShirtsPromoComponent } from './pages/shirts-promo/shirts-promo.component';
+import { ImageModalComponent } from './modals/image-modal/image-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,10 +57,13 @@ import { ConfirmEmailComponent } from './pages/confirm-email/confirm-email.compo
     MosaicComponent,
     PasswordResetComponent,
     ConfirmEmailComponent,
+    ShirtsPromoComponent,
+    ImageModalComponent,
   ],
   entryComponents: [
     DownloadModalComponent,
     MessageModalComponent,
+    ImageModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cirquel-library'}),

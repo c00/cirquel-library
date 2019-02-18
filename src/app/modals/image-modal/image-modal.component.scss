@@ -1,0 +1,62 @@
+img {
+  width: 100%;
+  transition: opacity ease .1s;
+
+  &.loading {
+    opacity: .5;
+  }
+}
+
+.component {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  font-size: 2em;
+  z-index: 10;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  font-size: 3em;
+  padding: 1em;
+  transform: translateY(-50%);
+
+  &.prev {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+.text {
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: #eeeeeeb3;
+  font-size: 1.2em;
+}
+
+.spinner { 
+  padding: 2em;
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 3em;
+  margin: auto;
+  background: #eeeeeeb3;
+  font-size: 1.2em;
+  left: 47%;
+  top: 20%;
+}

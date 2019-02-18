@@ -1,0 +1,12 @@
+<div class="component">
+  <a class="close-btn" href="javascript:;" (click)="dismiss()"><i class="fa fa-times"></i></a>
+  <a (click)="prev()" href="javascript:;" class="nav-button prev">
+    <i class="fa fa-chevron-left"></i>
+  </a>
+  <a (click)="next()" href="javascript:;" class="nav-button next">
+    <i class="fa fa-chevron-right"></i>
+  </a>
+  <img #img [src]="getImage(images[selectedIndex].name)" class="rounded" [class.loading]="loading">
+  <div class="text">{{images[selectedIndex].text}}</div>
+  <div class="spinner" *ngIf="loading"></div>
+</div>
