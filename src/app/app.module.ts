@@ -35,6 +35,7 @@ import { PasswordResetComponent } from './pages/password-reset/password-reset.co
 import { ConfirmEmailComponent } from './pages/confirm-email/confirm-email.component';
 import { ShirtsPromoComponent } from './pages/shirts-promo/shirts-promo.component';
 import { ImageModalComponent } from './modals/image-modal/image-modal.component';
+import { JbImageDirective } from './directives/jb-image.directive';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ImageModalComponent } from './modals/image-modal/image-modal.component'
     ConfirmEmailComponent,
     ShirtsPromoComponent,
     ImageModalComponent,
+    JbImageDirective,
   ],
   entryComponents: [
     DownloadModalComponent,
