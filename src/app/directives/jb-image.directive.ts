@@ -1,5 +1,6 @@
 import { Directive, Input } from '@angular/core';
 
+//This directive is courtesy of Jordan Benge https://github.com/Bengejd
 @Directive({
   selector: '[jbSrc]',
   host: {
